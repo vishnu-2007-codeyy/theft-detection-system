@@ -1,93 +1,91 @@
 🚨 AI Smart Security System with Telegram Alerts
 
-🔒 Real-time AI security system that detects motion and faces through a webcam and sends instant Telegram alerts with captured images.
+A real-time computer vision security system that detects motion and faces using your webcam and sends instant Telegram alerts with photos.
 
 📌 Overview
 
-The AI Smart Security System is a computer-vision-based monitoring system built with Python.
+This project is an AI-powered security monitoring system built with Python and computer vision.
 
-The system continuously analyzes your webcam feed to detect:
+The system continuously monitors a webcam feed and performs:
 
-Motion in the environment
+Motion detection
 
-Human faces
+Face detection
 
-Suspicious activity
+Intruder alert notification
 
 When a face is detected:
 
-1️⃣ A photo of the intruder is captured
-2️⃣ The image is saved locally
-3️⃣ An instant alert with the photo is sent to Telegram
+The system captures an image
+
+The image is saved locally
+
+A Telegram alert with the photo is sent instantly
 
 This project demonstrates real-time computer vision, automation, and notification systems.
 
-✨ Key Features
-Feature	Description
-📸 Real-time Face Detection	Detects human faces using OpenCV Haar Cascade
-🟢 Motion Detection	Identifies movement within the camera frame
-🔴 Intruder Detection	Highlights detected faces in real time
-📱 Telegram Alerts	Sends instant notifications with captured photos
-💾 Auto Image Storage	Saves intruder photos locally
-⏱ Alert Cooldown	Prevents notification spam
-🧪 Test Mode	Send test alerts manually
-⌨️ Keyboard Controls	Easy control with keyboard shortcuts
-📊 Live Status Display	Shows detection information on screen
+✨ Features
+
+Real-time face detection using OpenCV
+
+Motion detection using background subtraction
+
+Intruder alerts sent to Telegram
+
+Automatic image capture of intruders
+
+Configurable alert cooldown
+
+Test mode for sending alerts
+
+Keyboard controls for system operation
+
 🛠 Technology Stack
 Component	Technology
-Programming Language	Python 3.10+
+Language	Python 3.10+
 Computer Vision	OpenCV
-Face Detection	Haar Cascade Classifier
-Motion Detection	Background Subtraction (MOG2)
+Face Detection	Haar Cascade
+Motion Detection	MOG2 Background Subtraction
 Notifications	Telegram Bot API
 Data Processing	NumPy
 
-Development Environment:
+Development environment:
 Visual Studio Code
 
-🏗 System Architecture
+🏗 System Workflow
 Webcam Feed
-      │
-      ▼
+     ↓
 Frame Capture
-      │
-      ▼
+     ↓
 Motion Detection
- (Green Box)
-      │
-      ▼
+     ↓
 Face Detection
- (Red Box)
-      │
-      ▼
-Alert System
-      │
-      ▼
-Telegram Notification
-      │
-      ▼
-Mobile Phone Alert
+     ↓
+Intruder Detection
+     ↓
+Image Capture
+     ↓
+Telegram Alert
+     ↓
+Mobile Notification
 📁 Project Structure
 theft-detection-system/
 
-main_theft.py
-theft_detector.py
-telegram_notifier.py
-main_activity.py
-activity_classifier.py
-camera_test.py
-requirements.txt
-README.md
+main_theft.py              # Main security monitoring script
+theft_detector.py          # Intruder detection logic
+telegram_notifier.py       # Telegram alert system
+main_activity.py           # Activity detection module
+activity_classifier.py     # Activity classification
+camera_test.py             # Camera testing script
+requirements.txt           # Python dependencies
+README.md                  # Project documentation
 
-intruders/
-    intruder_20240305_153045.jpg
-
-__pycache__/   (ignored in Git)
+intruders/                 # Saved intruder images
 ⚙ Installation
-1️⃣ Clone the Repository
+1️⃣ Clone the repository
 git clone https://github.com/vishnu-2007-codeyy/theft-detection-system.git
 cd theft-detection-system
-2️⃣ Create Virtual Environment (Recommended)
+2️⃣ Create virtual environment (optional)
 
 Windows
 
@@ -98,101 +96,95 @@ Linux / Mac
 
 python3 -m venv venv
 source venv/bin/activate
-3️⃣ Install Dependencies
+3️⃣ Install dependencies
 pip install -r requirements.txt
 🤖 Telegram Bot Setup
-Step 1 — Create a Telegram Bot
+Step 1 — Create a bot
 
-Open Telegram and search for @BotFather
+Open Telegram and search @BotFather
 
-Run:
+Run the command:
 
 /newbot
 
-Choose:
+Choose a bot name and username.
 
-Bot Name
+Copy the bot token you receive.
 
-Bot Username (must end with bot)
+Step 2 — Get your Chat ID
 
-Copy the Bot Token provided.
+Send a message to your bot.
 
-Step 2 — Get Your Chat ID
-
-Send any message to your bot.
-
-Open in browser:
+Open this URL:
 
 https://api.telegram.org/botYOUR_TOKEN/getUpdates
 
-Find:
+Look for:
 
 "chat":{"id":123456789}
 
 That number is your Chat ID.
 
-Step 3 — Add Credentials
+Step 3 — Add credentials
 
-Edit main_theft.py:
+Edit the file main_theft.py:
 
 TELEGRAM_TOKEN = "YOUR_BOT_TOKEN"
 CHAT_ID = "YOUR_CHAT_ID"
 🚀 Usage
 
-Start theft detection:
+Run the main security system:
 
 python main_theft.py
 
-Start activity detection (optional):
+Optional modules:
+
+Activity detection:
 
 python main_activity.py
 
-Test camera:
+Camera test:
 
 python camera_test.py
 🎮 Keyboard Controls
-Key	Function
-q	Quit program
-t	Send test alert
+Key	Action
+q	Quit the program
+t	Send test Telegram alert
 
-| Increase alert cooldown
+| Increase alert cooldown |
 
-| Decrease cooldown
+| Decrease alert cooldown |
 
-📊 Sample Console Output
-🔒 Security System Initialized
-⏱ Alert Cooldown: 30 seconds
+📊 Example Output
 
-🚨 SECURITY MONITORING ACTIVE
+Console output:
 
-🟢 Green box = Motion
-🔴 Red box = Face detected
+Security system initialized
+Alert cooldown: 30 seconds
 
-Press 'q' to quit
-Press 't' for test alert
+Monitoring started...
 
-🚨 Intruder detected!
-📸 Photo captured
-📱 Telegram alert sent
+Face detected
+Intruder alert triggered
+Photo captured
+Telegram notification sent
 🔧 Troubleshooting
 Problem	Solution
-Camera not opening	Close other apps using camera
-No Telegram alerts	Verify token and chat ID
-Too many alerts	Increase cooldown value
+Camera not opening	Close other applications using the camera
+No Telegram alerts	Check bot token and chat ID
+Too many alerts	Increase alert cooldown
 Low detection accuracy	Improve lighting conditions
-🔒 Security Best Practices
+🔒 Security Notes
 
 Never upload Telegram tokens to GitHub
 
-Use .gitignore for sensitive files
+Use .gitignore to hide sensitive files
 
-Place camera at entry points
+Position camera at entry points
 
-Ensure proper lighting
+Ensure good lighting for detection
 
-Backup intruder images regularly
-
-Example .gitignore
+Example .gitignore:
 
 __pycache__/
 intruders/
@@ -205,22 +197,26 @@ Contributions are welcome.
 Steps:
 
 Fork the repository
+
 Create a new branch
+
 Commit your changes
-Push to the branch
-Open a Pull Request
+
+Push the branch
+
+Create a Pull Request
 
 Possible improvements:
 
-Facial recognition for known people
+Facial recognition for known users
 
-Night-vision mode
+Night vision mode
 
 Email alerts
 
 Cloud storage integration
 
-Multi-camera monitoring
+Multiple camera support
 
 📜 License
 
@@ -228,19 +224,20 @@ MIT License
 
 Copyright (c) 2026 Vishnu
 
-Permission is granted to use, modify and distribute this software.
-
 📧 Contact
 
 Developer: Vishnu
 
-GitHub:
+GitHub Repository:
+
 https://github.com/vishnu-2007-codeyy/theft-detection-system
 
 ⭐ Support
 
-If you find this project useful:
+If you like this project:
 
 ⭐ Star the repository
-📢 Share it
+
+📢 Share the project
+
 🤝 Contribute improvements
