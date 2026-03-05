@@ -220,7 +220,7 @@ Multiple camera support
 
 📜 License
 
-MIT License
+PROPRIETARY License issued 
 
 Copyright (c) 2026 Vishnu
 
